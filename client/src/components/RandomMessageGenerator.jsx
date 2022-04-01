@@ -1,5 +1,3 @@
-import React from 'react';
-
 const words = [
     "enemy",
     "weak foe",
@@ -315,7 +313,7 @@ const words = [
     "love",
     "bravery",
     "vigor",
-    "furtitude",
+    "fortitude",
     "confidence",
     "distracted",
     "unguarded",
@@ -435,5 +433,4 @@ export function generateMessage() {
         return message;
     }
     return fillTemplate();
-
 }
