@@ -1,0 +1,35 @@
+body {
+    background: black;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    margin-top: 7rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.msgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    color: white;
+    display: flex;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    height: 100px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    white-space: pre;
+}
+
+.button {
+    margin-top: 2rem;
+}

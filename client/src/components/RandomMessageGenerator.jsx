@@ -1,3 +1,5 @@
+import React from 'react';
+
 const words = [
     "enemy",
     "weak foe",
@@ -370,21 +372,21 @@ const words = [
 ];
 
 const conjunctions = [
-    " and then ",
-    " or ",
-    " but ",
-    " therefore ",
-    " in short ",
-    " except ",
-    " by the way ",
-    " so to speak ",
-    " all the more ",
+    "and then ",
+    "or ",
+    "but ",
+    "therefore ",
+    "in short ",
+    "except ",
+    "by the way ",
+    "so to speak ",
+    "all the more ",
     ", "
   ];
   
 
 function fillTemplate() {
-    const word = getRandomWord();
+    const word = getWord();
     const templates = [
         `${word} ahead`,
         `Likely ${word}`,
@@ -416,12 +418,12 @@ function fillTemplate() {
     return templates[rand];
 }
 
-function getRandomWord() {
+function getWord() {
     const rand = Math.floor(Math.random() * words.length);
     return words[rand];
 }
 
-function getRandomConjunction() {
+function getConjunction() {
     const rand = Math.floor(Math.random() * conjunctions.length);
     return conjunctions[rand];
 }
@@ -429,12 +431,9 @@ function getRandomConjunction() {
 export function generateMessage() {
     const useConjunction = Math.random() < 0.5;
     if (useConjunction) {
-        const message1 = fillTemplate();
-        const conjunction =  getRandomConjunction();
-        const message2 = fillTemplate();
-        return message1 + conjunction + message2;
-    } else {
-        return fillTemplate();
+        const message = fillTemplate() + '\n' + getConjunction() + fillTemplate();
+        return message;
     }
+    return fillTemplate();
 
 }
